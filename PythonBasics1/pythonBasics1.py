@@ -7,10 +7,14 @@
 # Part A. odd_range
 # Define a function odd_range(num1, num2) that takes a starting number (num1) and an ending number (num2)
 # and returns all odd numbers as an array between num1 (inclusive) and num2 (exclusive)
+import array
 def odd_range(num1, num2):
-  # YOUR CODE HERE
+  arr = []
+  for i in range(num1, num2):
+    if i%2 != 0:
+      arr.append(i)
 
-  return
+  return arr
 
 # Part B. has_lower_case
 # Define a function has_lower_case(s) that takes a string s

@@ -50,5 +50,10 @@ def longest_consecutive_repeating_char(s):
 # forwards. Treat capital letters the same as lowercase ones
 # and ignore spaces (i.e. case insensitive).
 def is_palindrome(s):
-
-  return 
+  palindrome = False
+  if str(s).lower() == str(s)[::-1].lower():
+    palindrome = True
+  else:
+    palindrome = False
+ 
+  return palindrome

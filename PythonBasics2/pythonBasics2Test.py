@@ -14,7 +14,7 @@ def main():
     # set which functions to test
     check_count_threes = True
     check_longest_consecutive_repeating_char = True
-    check_is_palindrome = False
+    check_is_palindrome = True
 
     if check_count_threes:
         print('Testing count_threes:')

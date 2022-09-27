@@ -23,7 +23,7 @@ class TestPythonBasicsOne(unittest.TestCase):
 
         self.assertEqual(pythonBasics3.starts_with_non_number("& stands for and"), True)
 
-        # Please add three more test cases following the order above
+        # Added three more test cases following the order above
 
 
 #Test case for multiple_words

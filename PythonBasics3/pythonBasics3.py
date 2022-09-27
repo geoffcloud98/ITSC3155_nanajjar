@@ -27,6 +27,11 @@ def starts_with_non_number(s):
 # Note: Be sure to use RegEx and that it works for any whitespace character 
 # with at least one character on either side!
 def multiple_words(s):
+  regex = r"[A-Za-z]+\s"
+  hasWords = False
+  if(re.search(regex, s)):
+    hasWords = True
+  return hasWords
 
   return
 
@@ -39,5 +44,5 @@ def multiple_words(s):
 # Note: URLs will be in the format http://www.example.com. There will not be anything after the TLD
 # Hint: the URL should start with https and end with one of the TLDs
 def reserved_us_tld(s):
-  
+
   return

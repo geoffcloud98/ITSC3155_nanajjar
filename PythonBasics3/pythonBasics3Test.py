@@ -39,8 +39,14 @@ class TestPythonBasicsOne(unittest.TestCase):
 
         self.assertEqual(pythonBasics3.multiple_words(" one-sided? "), False)
 
+        self.assertEqual(pythonBasics3.multiple_words(" 1210? "), False)
+ 
+        self.assertEqual(pythonBasics3.multiple_words("I'm one word yo"), True)
+ 
+        self.assertEqual(pythonBasics3.multiple_words("Why am i writing this"), True)
 
-        # Please add three more test cases following the order above
+
+        # Added three more test cases following the order above
 
 
 #Test case for reserved_us_tld

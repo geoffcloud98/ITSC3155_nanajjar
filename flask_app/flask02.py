@@ -5,6 +5,7 @@ import os                 # os is used to get environment variables IP & PORT
 from flask import Flask   # Flask is the web app that we will customize
 from flask import render_template
 
+
 app = Flask(__name__)     # create an app
 
 # @app.route is a decorator. It gives the function "index" special powers.
@@ -12,7 +13,9 @@ app = Flask(__name__)     # create an app
 # get called. What it returns is what is shown as the web page
 @app.route('/index')
 def index():
-   return render_template('index.html')
+    a_user = {'name': 'Geoffrey', 'email':'gcloud@uncc.edu'}
+
+    return render_template("index.html", user = a_user)
 
 
 app.run(host=os.getenv('IP', '127.0.0.1'),port=int(os.getenv('PORT', 5000)),debug=True)

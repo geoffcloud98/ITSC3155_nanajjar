@@ -27,24 +27,24 @@ with app.app_context():
 @app.route('/')
 @app.route('/index')
 def index():
-    a_user =  db.session.query(User).filter_by(email='mogli@uncc.edu')
+    a_user =  db.session.query(User).filter_by(email='mogli@uncc.edu').one()
 
     return render_template("index.html", user = a_user)
 
 @app.route('/notes')
 def get_notes():
     # retrive user from data base
-    a_user = db.session.query(User).filter_by(email='mogli@uncc.edu')
+    a_user = db.session.query(User).filter_by(email='mogli@uncc.edu').one()
     #retrieve notes from database
-    my_notes = db.session.query(Note).all()
+    my_notes = db.session.query(Note).all().one()
     return render_template('notes.html', notes = my_notes, user = a_user)
 
 @app.route('/notes/<note_id>')
 def get_note(note_id):
     # retrive user from data base
-    a_user = db.session.query(User).filter_by(email='mogli@uncc.edu')
+    a_user = db.session.query(User).filter_by(email='mogli@uncc.edu').one()
     # retrieve note from database
-    my_note = db.session.query(Note).filter_by(id=note_id)
+    my_note = db.session.query(Note).filter_by(id=note_id).one()
 
     
     return render_template('note.html', note = my_note, user = a_user)
@@ -73,7 +73,7 @@ def new_note():
     else:
         # GET request - show new note form
         # retrieve user from database
-        a_user =  db.session.query(User).filter_by(email='mogli@uncc.edu')
+        a_user =  db.session.query(User).filter_by(email='mogli@uncc.edu').one()
 
         return render_template("new.html", user = a_user)
 

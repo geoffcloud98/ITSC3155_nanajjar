@@ -10,7 +10,7 @@ class Note(db.Model):
         self.title = title
         self.text = text
         self.date = date
-
+ 
 class User(db.Model):
     id = db.Column("id", db.Integer, primary_key=True)
     name = db.Column("name", db.String(100))
